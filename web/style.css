@@ -1,0 +1,37 @@
+*{
+	font-family: sans-serif;
+}
+.login{
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+}
+#msgRead{
+	width: 450px;
+	height: 500px;
+        overflow: scroll;
+        overflow-x: hidden
+}
+#loginTxt{
+	color: #000000;
+	text-decoration: none;
+	background-color: #00FF40;
+	width: 131px; 
+}
+#login{
+	background-color: #4DDBFF;
+	border-radius: 10px;
+	width: 332px;
+}
+h4{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+a{
+	text-decoration: none;
+	font-size: 10px;
+	color: #927f92;
+}
+textarea{
+	width: 300px;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AChat</title>
+		<link rel="shortcut icon" href="icon.ico">
+		<script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="login.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		</style>
+	</head>
+	<body>
+		<h1>The Chat App</h1>
+		
+		<div id="login">
+			<h4>Login</h4>
+			<input class="login" id="loginName" type="text" placeholder="Username">
+			<input class="login" id="loginPassword" type="password" placeholder="Password">
+			<br>
+			<input class="login" type="button" value="login" onclick="login()">
+			<a href="signUp.html">Sign up</a>
+		</div>
+			
+		<a href="chatApp.html" id="logout">Log out</a>		
+		
+		<div id="app">	
+			<br>
+			<input id="name" type="text" value="" disabled="disabled">
+			<br>
+			<textarea id="msg" placeholder="Message" rows="5"></textarea>
+			<br>
+			<input type="button" value="send" onclick="sendMsg()">
+		
+			<div id="msgRead"></div>
+		</div>
+	</body>
+</html>
