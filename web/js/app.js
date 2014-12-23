@@ -1,36 +1,48 @@
-var FB = new Firebase("https://radiant-torch-1512.firebaseio.com/chatapp/msgs");
-var sound = new Audio("Assets/newMsgSound.wav");
+var globalFB = new Firebase("https://radiant-torch-1512.firebaseio.com/chatapp/msgs/global");
 var loggedIn = false;
 
-var sendMsg = function(){
+//Function to send global message
+var sendMsgGlobal = function(){
+	//Gets author and message
 	var author = $("#name").val();
-	var messageSend = $("#msg").val();
+	var messageSend = $("#msgGlobal").val();
 
-        if(messageSend == "" || messageSend == "/n"){
-                return;
-        }
+    //Checks to see if message is blank or a carridge return - reduces spam
+	if(messageSend == "" || messageSend == "/n"){
+            return;
+    }
 
-	FB.push({
+	//Pushes data to firebase
+	globalFB.push({
 		author : author,
 		message : messageSend
 		}
 	);
-	$("#msg").val("");
+
+	//Makes the message blank
+	$("#msgGlobal").val("");
 }
 
-FB.on('child_added', function (snapshot) {
+//When a new child (message) is added...
+globalFB.on('child_added', function (snapshot) {
+	//Get the snapshot
 	var newMSG = snapshot.val();
- 	    
-        $("#msgRead").prepend("<p><b>" + newMSG.author + " :</b> " + newMSG.message + "</p>");
+
+    //Prepend to top of message list
+	$("#msgReadGlobal").prepend("<p><b>" + newMSG.author + " :</b> " + newMSG.message + "</p>");
 })
 
+//A function for when the return key is pressed
+//ITS MESSY BUT IT DOES THE JOB. FIX IT LATER
 $(document).keydown(function(e){
-        if(loggedIn){	    
+        //If you are logged in, send the current message
+		if(loggedIn){
                 if(e.which == 13){
-		        sendMsg();	
+		        sendMsgGlobal();
 	        }
         }
-        else{
+        //Otherwise, attempt to login
+		else{
                 if(e.which == 13){
                         login();
                 }
