@@ -24,6 +24,9 @@ var login = function(){
 			return;
 		}
 
+		//Function in groupChat.js to get all group messages
+		getGroupChat(userName);
+
 		//Hides all of the login section
 		if(loginData.userName === userName && loginData.password === userPassword){
 			$("#loginTxt").slideUp();
