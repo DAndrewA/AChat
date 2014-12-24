@@ -34,8 +34,8 @@ var login = function(){
 			$("#name").val(userName);
 			alert("Login succesful");
 			$("#logout").slideDown();
-			$("#app").slideDown();
-                        loggedIn = true;
+			$("#appGlobal").slideDown();
+			loggedIn = true;
 		}
 	});
 };
@@ -48,6 +48,5 @@ var invalid = function(problem){
 
 
 $(document).ready(function(){
-	$("#app").hide();
-        console.log("hidden");
+	$("#appGlobal").hide();
 });

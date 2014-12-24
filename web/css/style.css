@@ -6,17 +6,22 @@
 	margin-right: 5px;
 	margin-bottom: 5px;
 }
+.groupChat{
+	height: 450px;
+	width: 350px;
+	border: black 2px solid;
+}
 #msgRead{
 	width: 450px;
 	height: 300px;
         overflow: scroll;
-        overflow-x: hidden
+        overflow-x: hidden;
 }
 #loginTxt{
 	color: #000000;
 	text-decoration: none;
 	background-color: #00FF40;
-	width: 131px; 
+	width: 131px;
 }
 #login{
 	background-color: #4DDBFF;
