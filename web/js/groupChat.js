@@ -30,8 +30,8 @@ function getGroupChat(name){
 function openGroup(group){
 
     //Appends the div onto appGroups. It will then become draggable
-    $("#appGroups").append("<div class='groupChat'><h3>Group " + group + "</h3><textarea id='msg-" + group + "' placeholder='Message' rows='5'></textarea><br><button onClick='sendGroupMsg(" + group +")'>Send message</button><br><div id='msgRead-" + group + "'></div></div>");
-    $(".groupChat").draggable();
+    $("#appGroups").append("<div id='groupChat" + group +"' style='border: 2px black solid;'><h3>Group " + group + "</h3><textarea id='msg-" + group + "' placeholder='Message' rows='5'></textarea><br><button onClick='sendGroupMsg(" + group +")'>Send message</button><br><div id='msgRead-" + group + "'></div></div>");
+    $(".groupChat" + group).draggable();
 
     groupChatFB = groupFB.child(group);
 
