@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ChatApp2</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script>
+            var socket = io();
+            $("form").submit(function(){
+                socket.emit("sendMsg",$("#m").val(),$("#name").val());
+                $("#m").val("");
+                return false;
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Welcome to the chat app!</h1>
+        <form>
+            <input id="name" autocomplete="off" placeholder="name" />
+            <input id="m" autocomplete="off" placeholder="msg" /><button>Send</button>
+        </form>
+        <ul></ul>
+    </body>
+</html>

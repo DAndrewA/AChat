@@ -1,0 +1,10 @@
+{
+  "name": "chat-app-orchestrate",
+  "version": "0.0.1",
+  "description": "An app like AChat that uses a node.js server, orchestrate and socket.io",
+  "dependencies": {
+    "express": "^4.12.0",
+    "orchestrate": "^0.4.1",
+    "socket.io": "^1.3.4"
+  }
+}
